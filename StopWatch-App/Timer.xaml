@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="StopWatch_App.Clock"
+              BackgroundColor="Black">
+     <ContentPage.Content>
+         <StackLayout >
+         <Grid IsVisible="false" x:Name="running_time">
+             <Ellipse Fill="lightgray" Stroke="black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="250" HeightRequest="250" Grid.Row="1" Margin="0,55,0,-200"/>
+             <Label HorizontalOptions="CenterAndExpand"  x:Name="display" FontSize="50" VerticalOptions="CenterAndExpand" Margin="0,200,0,-270" TextColor="Black"/>
+         </Grid>
+         <Grid x:Name="fixing_time" IsVisible="true">
+              <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,100,0,0" >
+                 <Entry Placeholder="00" PlaceholderColor="red" FontSize="50"  MaxLength="2" Keyboard="Numeric" x:Name="hours" IsReadOnly="False"/>
+                 <Entry Placeholder=":" IsEnabled="False" PlaceholderColor="red" IsReadOnly="True" FontSize="50" />
+                 <Entry Placeholder="00" PlaceholderColor="red" FontSize="50" MaxLength="2" Keyboard="Numeric" x:Name="minutes"/>
+                 <Entry Placeholder=":" IsEnabled="False" PlaceholderColor="red" IsReadOnly="True" FontSize="50"/>
+                 <Entry Placeholder="00" PlaceholderColor="red" FontSize="50" MaxLength="2" Keyboard="Numeric" x:Name="seconds"/>                   
+              </StackLayout>
+         </Grid>
+             <StackLayout Orientation="Horizontal" Margin="0,350,0,0">
+                 <Button Text="restart" Clicked="Restart" HorizontalOptions="CenterAndExpand" IsVisible="false" x:Name="reset"/>
+                 <Button Text="Start" Clicked="StartnStop" HorizontalOptions="CenterAndExpand" x:Name="startnstop" />
+             </StackLayout>
+         </StackLayout>
+     </ContentPage.Content>
+ </ContentPage>
